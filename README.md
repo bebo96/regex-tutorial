@@ -12,56 +12,50 @@ In this tutorail, we will be looking at the following regex expression and how i
 
 - [Anchors](#anchors)
 - [Quantifiers](#quantifiers)
-- [OR Operator](#or-operator)
 - [Character Classes](#character-classes)
-- [Flags](#flags)
 - [Grouping and Capturing](#grouping-and-capturing)
 - [Bracket Expressions](#bracket-expressions)
 - [Greedy and Lazy Match](#greedy-and-lazy-match)
-- [Boundaries](#boundaries)
-- [Back-references](#back-references)
-- [Look-ahead and Look-behind](#look-ahead-and-look-behind)
 
 ## Regex Components
 
 ### Anchors
 The family of regex tokens that don't match any characters but make a claim about the string or the matching procedure includes anchors. Anchors claim that the engine is currently located in the string at a location that is known to exist, such as the start of the string or the end of a line.
-#### Anchors in email validation: 
-- [^,$]
-  - [^ : starting position]
-  - [$ : ending position]
-
+- [^,$] symbols are used in our email validation expression
+  - ^ : starting position
+  - $ : ending position
+Example in email validation: /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/ <-- You can see the "^" at the beginning of the check and the "$" at the end of the check 
 ### Quantifiers
 The number of instances of the previous element—which could be a character, a group, or a character class—that must be present in the input string for a match to take place is specified by a quantifier. They also choose whether a regex will try a lazy or greedy match.
-
+- + , {2,6} quantifiers are used in our email validation
+  - + : matches one or more of the previous expression
+  - {2,6} : the value of the previous token
+Example in email validation: /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/ <-- You can see the + allows the characters from a to z (a-z), 0 to 9 (0-9), and an underscore. 
+Example in email validation: /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/ <-- You can see the {2,6} being used to define how many of (a-z\.) it can use before the end of the email  
 ### Character Classes
 Character Classes correspond to a certain collection of characters. You can define distinct sets or choose from predefined classes. A sizable set of character classes can also be mixed.
-#### Character classes in email validation: 
-- [a-z, 0-9, /d, /., @]
-
-### Flags
-Six optional flags in regular expressions enable features like global and case-insensitive searches. These flags, which are a component of the regular expression, can be used individually or collectively in any combination.
-#### 
+- In this email we are using the following character classes: a-z, 0-9, /., @
+  - a-z is any character from a to z as discussed before 
+  - 0-9 is any number from 0 to 9
+  - /. a forward slash is considered an escape character. In this case we are using it for the period (.com)
+Example in email validation: /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/ <-- You can see all the quantifiers mentioned above in this example 
 
 ### Grouping and Capturing
-
+To regard a set of characters as a single entity they must be captured. They are made by putting the characters inside parenthesis that will form the group.
+- For example: ibrahim@gmail.com
+  - "ibrahim" is the first group
+  - "gmail" is the second group 
+  - ".com" is the third group 
 
 ### Bracket Expressions
-
+Bracket expressions are what seperate lists of classes from each other 
+- For example in our regex we have 3 different bracket seperations:  [a-z0-9_\.-], [\da-z\.-], and [a-z\.]
 
 ### Greedy and Lazy Match
-
-
-### Boundaries
-
-
-### Back-references
-
-
-### Look-ahead and Look-behind
-
+- There are two types of matching when working with regex: 
+  - Greedy: match as many characters as possible
+  - Lazy: match as few characters as possible
 
 ## Author
 
-
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+My name is Ibrahim and this tutorial was made as part of an assignment for a Fullstack Web Developer Bootcamp. Check out my github! [Ibrahims github](https://github.com/bebo96 "Ibrahim Imran")
