@@ -28,8 +28,8 @@ In this tutorail, we will be looking at the following regex expression and how i
 The family of regex tokens that don't match any characters but make a claim about the string or the matching procedure includes anchors. Anchors claim that the engine is currently located in the string at a location that is known to exist, such as the start of the string or the end of a line.
 #### Anchors in email validation: 
 - [^,$]
-- - [^ : starting position]
-- - [$ : ending position]
+  - [^ : starting position]
+  - [$ : ending position]
 
 ### Quantifiers
 The number of instances of the previous element—which could be a character, a group, or a character class—that must be present in the input string for a match to take place is specified by a quantifier. They also choose whether a regex will try a lazy or greedy match.
