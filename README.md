@@ -30,7 +30,9 @@ The number of instances of the previous element—which could be a character, a 
 - '+' , {2,6} quantifiers are used in our email validation
   - '+' : matches one or more of the previous expression
   - {2,6} : the value of the previous token
+  
 Example in email validation: /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/ <-- You can see the + allows the characters from a to z (a-z), 0 to 9 (0-9), and an underscore. 
+
 Example in email validation: /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/ <-- You can see the {2,6} being used to define how many of (a-z\.) it can use before the end of the email  
 ### Character Classes
 Character Classes correspond to a certain collection of characters. You can define distinct sets or choose from predefined classes. A sizable set of character classes can also be mixed.
